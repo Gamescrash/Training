@@ -18,4 +18,4 @@ SELECT * FROM grocieries ORDER BY aisle;
 --Aggregating data
 SELECT SUM(aisle) FROM grocieries;
 SELECT MAX(aisle) FROM grocieries;
-SELECT name, SUM(aisle) FROM grocieries GROUP BY aisle;
+SELECT name, MAX(aisle) FROM grocieries;
