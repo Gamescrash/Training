@@ -19,3 +19,41 @@ SELECT * FROM grocieries ORDER BY aisle;
 SELECT SUM(aisle) FROM grocieries;
 SELECT MAX(aisle) FROM grocieries;
 SELECT name, MAX(aisle) FROM grocieries;
+
+
+-- ///////////////////////////////////////
+
+CREATE TABLE exercise_logs 
+(id INTEGER PRIMARY KEY AUTOINCREMENT,
+type TEXT,
+minutes INTEGER,
+calories INTEGER,
+heart_rate INTEGER);
+
+INSERT INTO exercise_logs (type, minutes, calories, heart_rate)
+VALUES ("biking", 30, 115, 110);
+INSERT INTO exercise_logs (type, minutes, calories, heart_rate)
+VALUES ("biking", 60, 200, 120);
+INSERT INTO exercise_logs (type, minutes, calories, heart_rate)
+VALUES ("biking", 120, 260, 125);
+INSERT INTO exercise_logs (type, minutes, calories, heart_rate)
+VALUES ("dancing", 50, 90, 99);
+INSERT INTO exercise_logs (type, minutes, calories, heart_rate)
+VALUES ("dancing", 45, 80, 108);
+INSERT INTO exercise_logs (type, minutes, calories, heart_rate)
+VALUES ("hiking", 200, 270, 150);
+INSERT INTO exercise_logs (type, minutes, calories, heart_rate)
+VALUES ("rowing", 150, 210, 200);
+INSERT INTO exercise_logs (type, minutes, calories, heart_rate)
+VALUES ("bowling", 20, 45, 105);
+
+SELECT * FROM exercise_logs;
+
+SELECT type, SUM(calories) AS total_calories FROM exercise_logs
+    GROUP BY type
+    HAVING total_calories > 250
+    ;
+
+SELECT type, AVG(calories) as avg_calories FROM exercise_logs
+    GROUP BY type
+    HAVING avg_calories > 70;
