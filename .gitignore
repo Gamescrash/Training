@@ -1,3 +1,4 @@
 test.tsv
 train.tsv
 .venv
+stage_2_train_images/
